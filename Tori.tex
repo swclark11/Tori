@@ -1,0 +1,297 @@
+\documentclass[11pt,oneside,draft]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{fouriernc} % Fourier fonts instead of Computer Modern
+
+\usepackage{geometry} % page geometry
+\usepackage{xcolor} % colors
+\usepackage{tikz} % drawing
+\usepackage{hyperref} % hyperlinks
+
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[all,cmtip]{xy}
+\usepackage{preamble}
+\usepackage{autoref_short}
+\usepackage[utf8]{inputenc}
+
+%%
+%% cross references
+%%
+\usepackage[capitalise]{cleveref}  % load after hyperref
+\newcommand{\clevertheorem}[3]{%
+  \newtheorem{#1}[thm]{#2}
+  \crefname{#1}{#2}{#3}
+}
+
+
+%% Makes equations appear as secno.eqno
+\numberwithin{equation}{section} %% Comment out for sequentially-numbered
+\numberwithin{figure}{section} %% Comment out for sequentially-numbered
+
+
+%%
+%% theorem-like environments
+%%
+%\theoremstyle{plain} % bold environment name, italic text
+%\newtheorem{thm}{Theorem}[section]
+%\crefname{thm}{Theorem}{Theorems}
+%\newtheorem*{thm*}{Theorem}
+%\clevertheorem{prop}{Proposition}{Propositions}
+%\newtheorem*{prop*}{Proposition}
+%\clevertheorem{lem}{Lemma}{Lemmas}
+%\clevertheorem{cor}{Corollary}{Corollaries}
+%\clevertheorem{conj}{Conjecture}{Conjectures}
+%
+%\theoremstyle{definition} % bold environment name, plain text
+%\clevertheorem{defn}{Definition}{Definitions}
+%\clevertheorem{notn}{Notation}{Notations}
+%
+%\theoremstyle{remark} % italic environment name, plain text
+%\clevertheorem{rmk}{Remark}{Remarks}
+%
+%\newtheorem*{note}{Note}
+
+%% This makes equations follow the theorem counter
+\makeatletter\let\c@equation\c@thm\makeatother
+%% This makes figures follow the theorem counter
+\makeatletter\let\c@figure\c@thm\makeatother
+
+
+% Additional cleveref definitions
+\crefname{figure}{Figure}{Figures}
+\crefname{equation}{Display}{Displays} % give 'equation' a more general name 
+\crefname{eq}{Display}{Displays}
+\crefname{eqn}{Display}{Displays}
+
+
+
+%%
+%% Document-specific stuff
+%%
+
+
+%% document-specific options for hyperref
+\hypersetup{
+ pdfkeywords={latex starter,template},
+ pdfauthor={Niles Johnson},
+}
+
+
+
+%% MSC
+%% http://www.ams.org/mathscinet/msc/msc2010.html
+\subjclass[2010]{55P42}
+
+% 55P42 Stable homotopy theory, spectra
+% 55N15 K-theory
+% 18D10 Monoidal categories
+% 18D05 Double categories, 2-categories, bicategories
+% 19D23 Symmetric monoidal categories (in K-theory)
+% 
+
+
+
+\begin{document}
+
+ \section*{{\bf Collecting thoughts on \texorpdfstring{$T^2$}{T}}}
+\vskip 1cm
+
+\begin{eg}Let $f  \colon  S^1\rightarrow S^1$ be such that $L(f)\not =0$ and $L(f^n)=0$. Does there exist a map $g\simeq f $ such that $\#Fix_n (g) \colon = \# \{ x\in T^2 \colon f(x)\not = x ; f^n(x)=x\}=0$
+\end{eg}
+
+\begin{proof}
+Recall that $L(f)=|1-deg(f)|=|1-\lambda|$ where $\lambda$ is the eigenvalue for $f_*\colon\pi_1(S^1)\rightarrow \pi_1(S^1) $. 
+If $L(f)\not = 0$ and $L(f^2)=0$ then we conclude that $\lambda=-1$ 
+and $f$ is homotopic to the degree $-1$ map. 
+For simplicity, we will assume that $deg(f)=-1$, that is 
+$f(e^{2\pi*x})=e^{-2\pi*(-x)}$ for $x \in [0,2\pi ]$. 
+
+Define $g(e^{2\pi*x})=e^{2\pi*(1-x)^p}$ where $p\approx 1$. Then $\#Fix(g)=\#Fix(g^2)$ through a simple calculation. 
+\end{proof}
+
+
+\section*{Review} 
+First recall that given $f\colon T^2 \longrightarrow T^2$, there exists a 
+linear covering space map $f'  \colon \R^2 \longrightarrow \R^2$ with 
+corresponding matrix $A\in \Z^{2\times 2}$ such that $f'|_{\Z^{2\times 2}}=f_* \colon H _1 (T^2) \longrightarrow H_1(T^2)$. This results in the 
+following diagram 
+
+    $$\xymatrix{
+	{\R^2 \ar[r]^{f_*} \ar[d]_p } &   {\R^2 \ar[d]^p } \\
+						 T^2 \ar[r]^f & T^2
+	}
+	$$
+which commutes up to homotopy. 
+
+\begin{prop} \cite{MR0375287}   
+	Given $f\colon T^2 \longrightarrow T^2$, $L(f)=N(f)= \Pi_1 ^2 (1-\lambda_i)$ where $\lambda_i$ is an eigenvalue for the map $f_*$. 
+    Furthermore, the eigenvalues of $f_* ^j$ are exactly $\{\lambda_i ^j \}_{i=1}^2$. Therefore if $N(f)=0$ then $f_*$ has an eigenvalue of $\lambda^j=1$ which yields that $N(f^j)=0$ for $i\in \N$. 
+\end{prop}
+
+\begin{lem}\label{conjugation}\cite{MR1340261} 
+	Let $\rho \colon T^2\longrightarrow T^2$ be a homeomorphism. If the 
+conjecture holds for a map $f \colon T^2\longrightarrow T^2$, then it holds for $\rho^{-1}\circ f\circ \rho$. 
+\end{lem}
+
+\begin{proof}
+	Let $g\simeq f$ be such that $\#Fix(g^n)=0$ then $\rho^{-1}\circ g\circ \rho\simeq \rho^{-1}\circ f\circ \rho$ and $\#Fix(\rho^{-1}\circ g\circ \rho)=0$
+
+\end{proof}
+\section*{Case where \texorpdfstring{$n=2$}{n} and \texorpdfstring{$L(f)=0$}{L(f)}} 
+
+\begin{lem}\label{nice_form}
+	Let $ A\in \Z^{n\times n}$  be the matrix defining the map $f_*$ with eigenvalue $\lambda=1$. Then there exists a linear isomorphism $\rho  \colon \R^n\longrightarrow\R^n$ such that $\rho ^{-1} \circ f_* \circ \rho$ is represented by the block matrix $ A'= \left( \begin{array}{ccc}
+1 & \alpha  \\
+0 & \beta  \end{array} \right)$ where $\alpha\in \Z^{1\times (n-1)}$ and $ \beta \in \Z^{(n-1)\times (n-1)}$.
+\end{lem}
+
+\begin{conj}\label{the_conjecture} Let $f\colon T^n \longrightarrow T^n$ be continuous function. If $N(f)=0$ then there exists $g\sim f$ such that $\# Fix(g^i)=0$ for $i\in \N$.
+\end{conj}
+\begin{proof}[Proof of Conjecture \ref{the_conjecture}]
+
+
+By the above lemma it is enough to consider the matrix $A'=\left( \begin{array}{ccc}
+	1 & \alpha  \\
+	0 & \beta \end{array} \right)$. Note that the map between tori induced by $A'$ is given $f'(e^{ix2\pi},e^{iy2\pi})=(e^{i(x+\alpha y)2\pi},e^{i\beta y2\pi})$. We will construct homotopies depending on the value of $\beta$.
+
+    	If $\beta=1$ then consider the homotopy $H((e^{ix2\pi},e^{iy2\pi}),t)=(e^{i(x+\alpha y)2\pi},e^{i(y+t\sqrt{2})2\pi})$. Define $H|_{1}=g \simeq f'$  and $\#Fix(g)={0}$. 
+        This can be seen by noticing that the second coordinate can have no fixed points 
+        since $iy2\pi =i(y + \sqrt{2})2\pi$ would require $\sqrt{2}=0$, which is nonsense. 
+        Next note that $$g^n(e^{ix2\pi},e^{iy2\pi})=(e^{i(x+n\alpha y +\frac{n(n-1)}{2}\sqrt{2})2\pi},e^{i(y+n\sqrt{2})2\pi})$$
+        has no fixed points since there cannot be any fixed points in the second 
+        coordinate. Thus, we have a map $g\simeq f'$ such that $\#fix(g^i)=0$ for $i=\{0,1 \ldots \}$
+        
+
+    	If $\beta \not =1$ we may first notice that $f'$ has $\beta-1$ fixed points in the 
+        second coordinate when $y=\{\frac{n}{\beta-1}| n=\{0,1,2, \ldots \beta-1\}\}$. 
+        Consider the homotopy $H((e^{ix2\pi},e^{iy2\pi}),t)=(e^{i(x+\alpha y + \sqrt{2})2\pi},e^{i\beta y2\pi})$, then $H|_{1}=g \simeq f'$ and $\#Fix(g)={0}$. This can be seen 
+        through examining the first coordinate at the rational points $\frac{n}{\beta -1}$ 
+        With simple computations we see that a fixed point would require $x=x+\alpha \frac{n}{\beta -1} +\sqrt{2} $ which results in $ \sqrt{2}\in \Q$ which is nonsense. Next 
+        note that for $n\geq 2$
+        $$g^n(e^{ix2\pi},e^{iy2\pi})=(e^{i(x +y\alpha(\beta + \beta^2 + \ldots +\beta^{(n-1)}+n\sqrt{2})2\pi},e^{i\beta^ny2\pi})$$
+        
+       Which, through another simple algebra check, can be shown $g^n$ has no fixed points 
+       for any $y\in \Q$ which as previously stated covers all of the possible fixed points. 
+\end{proof}
+
+
+\section*{ Case where \texorpdfstring{$n=2$}{n}, \texorpdfstring{$L(f)\not =0$}{L(f)} but \texorpdfstring{$L(f^2)=0$}{L(f)}}
+
+{Note that if $L(f)\not =0$ but $L(f^2)=0$ then $\lambda=-1$ is an 
+eigenvalue for the map $f_*  \colon  \pi_1(T^2)\rightarrow \pi_1(T^2)$. The 
+previous section allows us to specialize the map to a "nice" form. }
+
+
+\begin{lem}\label{nice_form}
+	Let $ A\in \Z^{2\times 2}$  be the matrix defining the map $f_*$ 
+with eigenvalue $\lambda=-1$. Then there exists a linear isomorphism $\rho  \colon \R^2\longrightarrow\R^2$ such that $\rho ^{-1} \circ f_* \circ \rho$ 
+is represented by the block matrix $ A'= \left( \begin{array}{ccc}
+-1 & a \\
+0 & b  \end{array} \right)$ where $a\in \Z$ and $ b \in \Z$.
+\end{lem}
+
+Now we will compute $NF_2(f)$ where $f$ is defined with the matrix above. We must construct 
+the periodic point class data of $f$ by taking the essential classes, of period $1$ or $2$, 
+which do not contain any essential classes of lower period. To each $f$-orbit, we find the 
+minimum height of the orbit. The sum of those heights is $NF_2(f)$
+
+\begin{eg}
+Note for the above function $L(f)=|\Pi (1-\lambda_i)|=|(1-(-1))(1-b)|=2(b-1)$ and by assumption $L(f^2)=0$ meaning there are no essential fixed point classes on level $2$. Thus $NF_2(f)=2(b-1)$.
+\end{eg}
+
+
+\prop{Let $f \colon T^2 \to T^2$ be such that $N(f)\not =0$ and $N(f^2)=0$. Then there exists a $g\simeq f$ such that $\# fix(g^2)=NF_2(f)$}
+
+\begin{proof}
+ Recall that $f(x, y)=[-x +ay, by]$. Consider $g(x, y) \colon = [ 1-x^p +ay, by]$, then $g^2(x,y)=[1-(1-x^p +ay)^p +aby, b^2y ]$ where $(x,y)\in(\R / \Z) \times (\R/\Z)$ and $p=1+\epsilon$ for some $\epsilon>0$. 
+ Note that fixed in the second component of $g$ are given by $y=\frac{i}{b-1}$ for $i=\{0,1, \ldots b-2\}$. Similarly, the fixed 
+ fixed points of the second component for $g^2$ are given by $y=\frac{i}{b^2-1}$ for $i=\{0,1, \ldots b^2-2\}$. Thus to 
+ characterize the fixed points of $g$ and $g^2$ we can find the fixed 
+ points of $g\left(x, \frac{i}{b-1}\right)$ and $g^2\left(x, \frac{i}{b^2-1}\right)$. 
+
+Consider the alternate definition for $g(x, \frac{i}{b^2-1})$. Define 
+
+\[\hat{g}\colon I\rightarrow I\]
+\[ \hat{g}(x) =
+   \begin{cases} 
+      n-x^p & 0\leq x \leq n^{\frac{1}{p}} \\
+      n+1-x^p & n^{\frac{1}{p}}\leq x\leq 1 \\
+   \end{cases}
+\]
+ \[ n=1+\frac{ai}{b^2-1}- \ceil*{\frac{ai}{b^2-1}}\]
+Note that $\hat{g}$ is an equivalent to $g$, just without using 
+equivalence classes. Also, if $n\in \Z$ then this becomes a question 
+about the maps covered in the $f \colon S^1\rightarrow S^1$ case above, 
+therefore we will cover the remaining cases by assuming that $n\not \in \Z$.
+
+
+Then we have that $\hat{g}^2$ can be defined as follows
+\[ \hat{g}^2(x) =
+   \begin{cases} 
+      1-(n-x^p)^p+\frac{abi}{b^2-1}-\ceil{\frac{abi}{b^2-1}} & 0\leq x \leq n^{\frac{1}{p}} \\
+     2-(n+1-x^p)^p+\frac{abi}{b^2-1}-\ceil{\frac{abi}{b^2-1}} & n^{\frac{1}{p}} \leq x\leq 1 \\
+   \end{cases}
+\]
+
+
+Take note of the simple calculations
+
+\begin{itemize}
+\item $g^2(1)-g^2(0)=1$
+\item $g^2$ is an increasing function
+\item $g^2(n^{\frac{1}{p}})-g^2(0)=n^p< n$ since $p>1$ 
+\end{itemize}
+To study the fixed points of $g^2(x, \frac{i}{b^2-1})$ we will use the 
+map \newline $h(x)=x-\hat{g}^2(x, \frac{i}{b^2-1})$. 
+Note that the roots of $h(x)=x-\hat{g}^2(x, \frac{i}{b^2-1})$ are 
+precisely the fixed points of $\hat{g}(x, \frac{i}{b^2-1})$. Thus we have fixed point 
+if ``$\hat{h}(0)>0$ and $\hat{h}(n^{\frac{1}{p}})<0$" or``$\hat{h}(0)<0$ and $\hat{h}(n^{\frac{1}{p}})>0$". 	
+ 
+
+Let us explore the first case. 
+
+\[h(0)>0 \Rightarrow n^p > 1+\frac{abi}{b^2-1}-\ceil{\frac{abi}{b^2-1}}\]
+ \[ h(n^{\frac{1}{p}})<0 \Rightarrow n^{\frac{1}{p}}< 1+\frac{abi}{b^2-1}-\ceil{\frac{abi}{b^2-1}}
+\]
+
+Note that this is impossible since for $p>1$ we have that $n^{\frac{1}{p}}>n>n^p$. Thus the 
+only possibility is when ``$\hat{h}(0)<0$ and $\hat{h}(n^{\frac{1}{p}})>0$". Thus we need 
+to check when the following inequalities hold.  
+
+\[h(0)<0 \Rightarrow n^p < 1+\frac{abi}{b^2-1}-\ceil{\frac{abi}{b^2-1}}\]
+ \[ h(n^{\frac{1}{p}})>0 \Rightarrow n^{\frac{1}{p}}> 1+\frac{abi}{b^2-1}-\ceil{\frac{abi}{b^2-1}}
+\]
+
+Note that since $p\approx 1$ this only holds when $n=1+\frac{abi}{b^2-1}-\ceil{\frac{abi}{b^2-1}}$;
+or we may show $[n]=[1+\frac{abi}{b^2-1}-\ceil{\frac{abi}{b^2-1}} ]$ in the 
+quotient $\R \setminus \Z$. 
+%Now we will separate into the cases where $y\in fix(f)$ and $y \in fix(f^2)\setminus fix(f)$
+
+% If $y\in fix(f)$ then $\frac{i}{b^2-1}=\frac{j}{b-1}$ for some $j$. Then plugging in these values into our equation it is easy to see that we have a fixed point. 
+
+% If $y\in\in fix(f^2)\setminus fix(f)$ then $\frac{i}{b^2-1}\not =\frac{j}{b-1}$
+
+\begin{align*}
+\frac{abi}{b^2-1} &\cong \frac{ai}{b^2-1} \\ 
+\frac{abi}{b^2-1}- \frac{ai}{b^2-1} & \cong 0 \\
+\frac{ai(b-1)}{b^2-1} & \cong 0 \\
+\frac{ai}{b+1}& \cong 0
+\end{align*}
+
+If $y\in fix(f)$ then $\frac{i}{b^2-1}=\frac{j}{b-1}$ for some $j$. Then plugging in these 
+values into our equation it is easy to see that the above is always true. If $y\in 
+fix(f^2)\setminus fix(f)$ then $\frac{i}{b^2-1}\not =\frac{j}{b-1}$ and we have a fixed 
+point whenever $\gcd (a, b+1) \not=1$ 
+
+Note that this says that we have a fixed point for $x\in [0, n^\frac{1}{p}]$, however an 
+identical argument shows that we have a second fixed point for $x\in [n^\frac{1}{p}, 1]$ 
+which is to be expected. Therefore we have shown that $fix(g)= 2(b-1)+2\phi (a, b+1)$ where $\phi (a, b+1)$ is the number of common divisors between $a$ and $b+1$. 
+\end{proof}
+
+
+
+
+\bibliographystyle{alpha}
+\bibliography{bibfile}
+
+\end{document}

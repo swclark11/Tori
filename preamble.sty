@@ -1,0 +1,187 @@
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+%\usepackage{mathpazo}
+%\usepackage{comment}
+%\usepackage{amscd}
+\usepackage[all]{xy}
+%\usepackage{mystyle}
+%\usepackage{mathrsfs}
+%\usepackage{url}
+%\usepackage[stable]{footmisc}
+%\usepackage{ulem}
+%\usepackage[margin=1in]{geometry}
+%\usepackage{fullpage}
+%\usepackage{graphicx}
+%\usepackage{tkz-graph}
+\usepackage{tikz}
+%\usetikzlibrary{arrows}
+%\newcommand{\midarrow}{\tikz \draw[-triangle 90] (0,0) -- +(.1,0);}
+%\newcommand{\midharrow}{\tikz \draw[-open triangle 90] (0,0) -- +(.1,0);}
+
+
+%\numberwithin{equation}{section}
+%\include{scrload}
+
+%\newcommand{\cal}{\mathcal}
+
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+\newcommand{\bA}{\ensuremath{\mathbf{A}}}
+\newcommand{\A}{\ensuremath{\mathbb{A}}}
+\newcommand{\cB}{\ensuremath{\mathcal{B}}}
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+\newcommand{\cC}{\ensuremath{\mathcal{C}}}
+\newcommand{\sC}{\ensuremath{\mathscr{C}}}
+\newcommand{\sD}{\ensuremath{\mathscr{D}}}
+%\newcommand{\be}{\ensuremath{\mathbf{e}}}
+\newcommand{\cE}{\ensuremath{\mathcal{E}}}
+\newcommand{\sE}{\ensuremath{\mathscr{E}}}
+\newcommand{\cF}{\ensuremath{\mathcal{F}}}
+\newcommand{\F}{\ensuremath{\mathbb{F}}}
+\newcommand{\G}{\ensuremath{\mathbb{G}}}
+\newcommand{\bH}{\ensuremath{\mathbb{H}}}
+\newcommand{\rH}{\ensuremath{\mathrm{H}}}
+\newcommand{\cI}{\ensuremath{\mathcal{I}}}
+\newcommand{\bK}{\ensuremath{\mathbb{K}}}
+\newcommand{\bL}{\ensuremath{\mathbb{L}}}
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\cN}{\ensuremath{\mathcal{N}}}
+\newcommand{\bP}{\ensuremath{\mathbb{P}}}
+\newcommand{\cp}{\ensuremath{\mathfrak{p}}}
+\newcommand{\sO}{\ensuremath{\mathscr{O}}}
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\bS}{\ensuremath{\mathbb{S}}}
+\newcommand{\cS}{\ensuremath{\mathcal{S}}}
+\newcommand{\cT}{\ensuremath{\mathcal{T}}}
+\newcommand{\cU}{\ensuremath{\mathcal{U}}}
+\newcommand{\cV}{\ensuremath{\mathcal{V}}}
+\newcommand{\cW}{\ensuremath{\mathcal{W}}}
+\newcommand{\bx}{\ensuremath{\mathbf{x}}}
+\newcommand{\cX}{\ensuremath{\mathcal{X}}}
+\newcommand{\bv}{\ensuremath{\mathbf{v}}}
+\newcommand{\bw}{\ensuremath{\mathbf{w}}}
+\newcommand{\cZ}{\ensuremath{\mathcal{Z}}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\newcommand{\Zp}{\ensuremath{\Z/\!p\Z}}
+\newcommand{\Ref}[1]{(\ref{#1})}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\inv}{^{-1}}
+\newcommand{\smsh}{\wedge}
+\newcommand{\into}{\hookrightarrow}
+\newcommand{\onto}{\twoheadrightarrow}
+\newcommand{\longto}{\longrightarrow}
+\newcommand{\rtarr}{\longrightarrow}
+\newcommand{\xrtarr}{\xrightarrow}
+\newcommand{\iso}{\cong}
+\newcommand{\del}{\partial}
+\newcommand{\bdry}{\partial}
+\newcommand{\normal}{\unlhd}
+\newcommand{\gap}{\vspace{3mm}}
+\newcommand{\Smk}{\ensuremath{\mathrm{Sm}_k}}
+\newcommand{\varep}{\varepsilon}
+\newcommand{\ds}{\displaystyle}
+\DeclareMathOperator{\im}{im}
+
+\newcommand{\al}{\alpha}
+%\newcommand{\Al}{\Alpha}
+\newcommand{\be}{\beta}
+\newcommand{\Be}{\Beta}
+\newcommand{\ga}{\gamma}
+\newcommand{\Ga}{\Gamma}
+\newcommand{\de}{\delta}
+\newcommand{\De}{\Delta}
+\newcommand{\epz}{\varepsilon}
+\newcommand{\Epz}{\Epsilon}
+
+
+\newcommand{\la}{\lambda}
+
+\newcommand{\Top}{\ensuremath{\mathbf{Top}}}
+\newcommand{\Set}{\ensuremath{\mathbf{Set}}}
+\newcommand{\Ho}{\ensuremath{\mathbf{Ho}}}
+\newcommand{\Sp}{\ensuremath{\mathbf{Sp}}}
+\newcommand{\Alg}{\ensuremath{\mathbf{Alg}}}
+\newcommand{\ComAlg}{\ensuremath{\mathbf{ComAlg}}}
+\newcommand{\Mod}{\ensuremath{\mathbf{Mod}}}
+\newcommand{\Gp}{\ensuremath{\mathbf{Gp}}}
+\newcommand{\AbGp}{\ensuremath{\mathbf{AbGp}}}
+\newcommand{\Id}{\ensuremath{\mathrm{Id}}}
+\newcommand{\TAQ}{\ensuremath{\mathbf{TAQ}}}
+%\newcommand{\Hom}{\ensuremath{\mathbf{Hom}}}
+\newcommand{\iHom}{\ensuremath{\mathbf{\underline{Hom}}}}
+\newcommand{\bMap}{\ensuremath{\mathbb{M}\mathrm{ap}}}
+\newcommand{\eval}{\ensuremath{\mathrm{eval}}}
+\newcommand{\nbhd}{{neighborhood} }
+\newcommand{\nbhds}{{neighborhoods} }
+\newcommand{\Nbhd}{{Neighborhood} }
+\newcommand{\Nbhds}{{Neighborhoods} }
+\newcommand{\cts}{{continuous} }
+\DeclareMathOperator{\chr}{char}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\Ext}{Ext}
+
+\newcommand{\breakhere}{\vspace{2em}
+\begin{center}
+%**************
+%$\star\star\star\star\star\star\star\star$ \\
+$\leadsto\leadsto\leadsto\leadsto\leadsto\leadsto\leadsto\leadsto\leadsto\leadsto\leadsto\leadsto\leadsto\leadsto\leadsto\leadsto\leadsto\leadsto\leadsto\leadsto\leadsto\leadsto\leadsto\leadsto\leadsto\leadsto\leadsto\leadsto\leadsto\leadsto\leadsto\leadsto\leadsto\leadsto$ \\
+%$\star\star\star\star\star\star\star\star$
+\end{center}
+\vspace{2em}
+}
+
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Map}{Map}
+\DeclareMathOperator*{\colim}{colim}
+\DeclareMathOperator*{\holim}{holim}
+\DeclareMathOperator*{\hocolim}{hocolim}
+\DeclareMathOperator{\Symm}{Symm}
+\DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\cl}{cl}
+\DeclareMathOperator{\rk}{rank}
+\DeclareMathOperator{\Span}{Span}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\coker}{coker}
+
+\newdir{ (}{{}*!/-5pt/@^{(}}
+
+
+% Allow worse line breaks while this work is in progress.
+\tolerance=3000
+% We'll get fewer ``underfull hbox'' messages with this set.
+\hbadness=10000
+% We'll get fewer ``overfull hbox'' messages with this set.
+\hfuzz=1.5pt
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+% \newtheorem{thm}[equation]{Theorem}
+% %\newtheorem{thm}{Theorem}[section]
+% \newtheorem{prop}[equation]{Proposition}
+% \newtheorem{conj}[equation]{Conjecture}
+% \newtheorem{propdefn}[equation]{Proposition and Definition}
+% \newtheorem{lemma}[equation]{Lemma}
+% \newtheorem{cor}[equation]{Corollary}
+%\newtheorem{ans}[equation]{Answer}
+%\newtheorem{ex}[equation]{Exercise}
+% \newtheorem{thmdefn}[equation]{Theorem-Definition}
+ \theoremstyle{definition}
+% \newtheorem{rmk}[equation]{Remark}
+% \newtheorem{eg}[equation]{Example}
+% \newtheorem{defn}[equation]{Definition}
+% \newtheorem{notn}[equation]{Notation}
+ \newtheorem*{ans}{Answer}
+ \newtheorem*{question}{Question}
+% \newenvironment{pf}{\begin{proof}}{\end{proof}}
+% \newenvironment{sketch}{{\it Sketch.\ }}{\qed}
+% \newenvironment{egii}{\begin{eg} \ \begin{enumerate}}{\end{enumerate}\end{eg}}
+% %% for piecewise-defined functions
+% \newcommand{\pcws}[1]{\left\{\begin{array}{ll} #1 \end{array}\right.}
+% \newenvironment{psmallmatrix}
+%   {\left(\begin{smallmatrix}}
+%   {\end{smallmatrix}\right)}
+% \newcommand{\smallmtx}[1]{\begin{psmallmatrix}#1\end{psmallmatrix}}
+% \newcounter{marker}

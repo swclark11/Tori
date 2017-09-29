@@ -1,0 +1,98 @@
+\newtheorem{thm}{Theorem}
+   \newcommand{\thmautorefname}{Theorem}
+
+\newtheorem{cor}{Corollary}
+   \makeatletter\let\c@cor\c@thm\makeatother
+   \newcommand{\corautorefname}{Corollary}
+
+\newtheorem{prop}{Proposition}
+   \makeatletter\let\c@prop\c@thm\makeatother
+   \newcommand{\propautorefname}{Proposition}
+\newtheorem*{prop*}{Proposition}
+
+\newtheorem{lem}{Lemma}
+   \makeatletter\let\c@lem\c@thm\makeatother
+   \newcommand{\lemautorefname}{Lemma}
+
+\newtheorem{conj}{Conjecture}
+   \makeatletter\let\c@conj\c@thm\makeatother
+   \newcommand{\conjautorefname}{Conjecture}
+
+
+\theoremstyle{definition}
+\newtheorem{hyp}{Hypothesis}
+   \makeatletter\let\c@hyp\c@thm\makeatother
+   \newcommand{\hypautorefname}{Hopothesis}
+
+\newtheorem{defn}{Definition}
+   \makeatletter\let\c@defn\c@thm\makeatother
+   \newcommand{\defnautorefname}{Definition}
+
+\newtheorem{defns}{Definitions}
+   \makeatletter\let\c@defns\c@thm\makeatother
+   \newcommand{\defnsautorefname}{Definitions}
+
+\newtheorem{con}{Construction}
+   \makeatletter\let\c@con\c@thm\makeatother
+   \newcommand{\conautorefname}{Construction}
+
+\newtheorem{Xeg}{Counterexample}
+   \makeatletter\let\c@Xeg\c@thm\makeatother
+   \newcommand{\Xegautorefname}{Counterexample}
+
+\newtheorem*{eg}{Example}
+   \makeatletter\let\c@eg\c@thm\makeatother
+   \newcommand{\egautorefname}{Example}
+
+\newtheorem{egs}{Examples}
+   \makeatletter\let\c@egs\c@thm\makeatother
+   \newcommand{\egsautorefname}{Examples}
+
+\newtheorem{ex}{Exercise}
+   \makeatletter\let\c@ex\c@thm\makeatother
+   \newcommand{\exautorefname}{Exercise}
+
+\newtheorem{notation}{Notation}
+   \makeatletter\let\c@notation\c@thm\makeatother
+   \newcommand{\notationautorefname}{Notation}
+
+\newtheorem{notations}{Notations}
+   \makeatletter\let\c@notations\c@thm\makeatother
+   \newcommand{\notationsautorefname}{Notations}
+
+\newtheorem{ques}{Question}
+   \makeatletter\let\c@ques\c@thm\makeatother
+   \newcommand{\quesautorefname}{Question}
+   
+
+\newtheorem{claim}{Claim}
+   \makeatletter\let\c@claim\c@thm\makeatother
+   \newcommand{\claimautorefname}{Claim}
+
+\newtheorem{blank}{}
+
+\theoremstyle{remark}
+\newtheorem{rmk}{Remark}
+   \makeatletter\let\c@rmk\c@thm\makeatother
+   \newcommand{\rmkautorefname}{Remark}
+
+\newtheorem{rmks}{Remarks}
+   \makeatletter\let\c@rmks\c@thm\makeatother
+   \newcommand{\rmksautorefname}{Remarks}
+
+\newtheorem{warn}{Warning}
+   \makeatletter\let\c@warn\c@thm\makeatother
+   \newcommand{\warnautorefname}{Warning}
+
+\newtheorem{sch}{Scholium}
+   \makeatletter\let\c@sch\c@thm\makeatother
+   \newcommand{\schautorefname}{Scholium}
+
+%\newtheorem*{note}{Note}
+
+
+% use this command to number diagrams
+\newcommand{\dgm}{\refstepcounter{thm}\thethm}
+
+%label sections with capitalized 'Section'
+%\newcommand{\sectionautorefname}{Section}
